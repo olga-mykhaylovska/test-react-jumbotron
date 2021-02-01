@@ -1,0 +1,49 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+    - master
+
+pool:
+    vmImage: 'ubuntu-latest'
+
+steps:
+    - task: YarnInstaller@3
+      inputs:
+          versionSpec: '1.x'
+
+    - task: Yarn@3
+      displayName: 'yarn install'
+      inputs:
+          arguments: 'install'
+
+    - task: Yarn@3
+      displayName: 'yarn build'
+      inputs:
+          arguments: 'build'
+
+    - task: ArchiveFiles@2
+      inputs:
+          rootFolderOrFile: 'build'
+          includeRootFolder: false
+          archiveType: 'zip'
+          archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+          replaceExistingArchive: true
+
+    - task: PublishBuildArtifacts@1
+      inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'drop'
+          publishLocation: 'Container'
+
+    - task: AzureRmWebAppDeployment@4
+      displayName: 'deploy to azure web app'
+      inputs:
+          ConnectionType: 'AzureRM'
+          azureSubscription: 'Azure subscription 1(c8ef752e-e488-42f2-a7ee-a7de158b1c15)'
+          appType: 'webAppLinux'
+          WebAppName: 'test-react-jumbotron'
+          packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+          RuntimeStack: 'STATICSITE|1.0'
