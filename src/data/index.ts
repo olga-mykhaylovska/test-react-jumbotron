@@ -1,3 +1,9 @@
+export enum AppMode {
+    NoData,
+    Single,
+    Multi,
+}
+
 export type ImageData = {
     imageUrl: string
     description: string
