@@ -4,7 +4,7 @@ import Jumbotron from '../Jumbotron'
 import ToggleAppMode from '../ToggleAppMode'
 import './App.css'
 
-const App = () => {
+export const App = () => {
     const [appMode, setAppMode] = useState(AppMode.Multi)
 
     const allAppModes = [AppMode.Multi, AppMode.Single, AppMode.NoData]
@@ -24,5 +24,3 @@ const App = () => {
         </div>
     )
 }
-
-export default App
