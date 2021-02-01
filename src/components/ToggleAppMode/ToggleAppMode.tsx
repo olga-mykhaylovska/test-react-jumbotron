@@ -2,20 +2,20 @@ import React from 'react'
 import { AppMode } from '../../data'
 
 type ToggleModeProps = {
-    allModes: AppMode[]
-    selectedMode: AppMode
-    onChange: (mode: AppMode) => void
+    allAppModes: AppMode[]
+    appMode: AppMode
+    onChange: (appMode: AppMode) => void
 }
 
-export const ToggleAppMode: React.FC<ToggleModeProps> = ({ selectedMode, allModes, onChange }) => {
+export const ToggleAppMode: React.FC<ToggleModeProps> = ({ appMode, allAppModes, onChange }) => {
     return (
         <div className="btn-group" role="group">
-            {allModes.map((mode) => (
+            {allAppModes.map((mode) => (
                 <button
                     key={mode}
                     type="button"
                     onClick={() => onChange(mode)}
-                    className={'btn ' + (mode === selectedMode ? 'btn-info active' : 'btn-light')}
+                    className={'btn ' + (mode === appMode ? 'btn-info active' : 'btn-light')}
                 >
                     {AppMode[mode]}
                 </button>

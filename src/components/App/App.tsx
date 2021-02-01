@@ -11,11 +11,7 @@ const App = () => {
     return (
         <div className="text-center">
             <div className="mt-3">
-                <ToggleAppMode
-                    allModes={allAppModes}
-                    selectedMode={appMode}
-                    onChange={setAppMode}
-                />
+                <ToggleAppMode allAppModes={allAppModes} appMode={appMode} onChange={setAppMode} />
             </div>
         </div>
     )
