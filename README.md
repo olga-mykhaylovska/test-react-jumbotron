@@ -5,9 +5,9 @@
 - If the image list is empty - display a placeholder message ("No images" or something like that)
 - If there's only one image: display image + description text
 - If there is more than one image:
-  * a) Show an image + description
-  * b) Show back/forward icons that show previous or next image correspondingly
-  * c) Automatically move to the next image after 10 seconds
+  * Show an image + description
+  * Show back/forward icons that show previous or next image correspondingly
+  * Automatically move to the next image after 10 seconds
 
 ---
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
