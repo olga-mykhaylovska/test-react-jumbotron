@@ -1,4 +1,13 @@
-# Getting Started with Create React App
+## Specifications:
+
+1. React component accepts a list of objects, each object has two fields: imageUrl and description
+2. The component has the following logic:
+- If the image list is empty - display a placeholder message ("No images" or something like that)
+- If there's only one image: display image + description text
+- If there is more than one image:
+  * a) Show an image + description
+  * b) Show back/forward icons that show previous or next image correspondingly
+  * c) Automatically move to the next image after 10 seconds
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
