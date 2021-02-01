@@ -17,6 +17,9 @@ export const Jumbotron: React.FC<JumbotronProps> = ({ images }) => {
     const handleNext = () =>
         setIndex((prevIndex) => (prevIndex < images.length - 1 ? prevIndex + 1 : 0))
 
+    // reset index every time images changed
+    useEffect(() => setIndex(0), [images])
+
     useEffect(() => {
         const timeoutId = images.length > 1 ? setTimeout(handleNext, NEXT_TIMEOUT) : undefined
 
