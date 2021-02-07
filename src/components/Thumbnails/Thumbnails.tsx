@@ -17,9 +17,7 @@ export const Thumbnails: React.FC<ThumbnailsProps> = ({ index, images, onChange 
                     src={image.imageUrl}
                     alt={image.description}
                     width="50"
-                    className={
-                        'img-link img-thumbnail m-1 p-2 ' + (idx === index ? 'bg-primary' : '')
-                    }
+                    className={'img-link img-thumbnail m-1 p-2 ' + (idx === index ? 'bg-info' : '')}
                     onClick={() => onChange?.(idx)}
                 />
             ))}
