@@ -1,7 +1,7 @@
 import React from 'react'
-import { ImageData } from '../../data'
+import { ImageInfo } from '../../data'
 
-export const Image: React.FC<ImageData> = ({ imageUrl, description }) => {
+export const Image: React.FC<ImageInfo> = ({ imageUrl, description }) => {
     return (
         <div className="card">
             <img className="card-img-top" src={imageUrl} alt={description} />

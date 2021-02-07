@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { ImageData } from '../../data'
+import { ImageInfo } from '../../data'
 import Actions from '../Actions'
 import Counter from '../Counter'
 import Image from '../Image'
@@ -8,7 +8,7 @@ import Thumbnails from '../Thumbnails'
 const NEXT_IN_SEC = 10
 
 type JumbotronProps = {
-    images: ImageData[]
+    images: ImageInfo[]
 }
 
 export const Jumbotron: React.FC<JumbotronProps> = ({ images }) => {
