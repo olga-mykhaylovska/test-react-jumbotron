@@ -3,6 +3,7 @@ import { ImageData } from '../../data'
 import Actions from '../Actions'
 import Counter from '../Counter'
 import Image from '../Image'
+import Thumbnails from '../Thumbnails'
 
 const NEXT_IN_SEC = 10
 
@@ -50,6 +51,8 @@ export const Jumbotron: React.FC<JumbotronProps> = ({ images }) => {
             <Actions onPrev={handlePrev} onNext={handleNext} />
 
             <Counter counter={counter} />
+
+            <Thumbnails index={index} images={images} onChange={setIndex} />
         </>
     )
 }
